@@ -159,7 +159,7 @@ Every device has Hand / Off / Auto control:
 hydroelectric-plc/
 │
 ├── TIA_Portal/
-│   └── HydroPlant.ap18          # TIA Portal V18 project archive (.ap18 export)
+│   └── HydroPlant.zap15          # TIA Portal V18 project archive (.zap15 export)
 │
 ├── media/                       # All screenshots and GIFs
 │   ├── idle_mode.png
