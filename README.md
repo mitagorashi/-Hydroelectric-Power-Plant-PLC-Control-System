@@ -20,8 +20,6 @@ A fully programmed PLC control system for a simulated hydroelectric power plant,
 
 ## 🎬 Demo
 
-> *(Optional — add a GIF or YouTube link showing the full sequence)*
-
 ![Full Sequence Demo](media/full_sequence_demo.gif)
 <!-- [![Watch on YouTube](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID) -->
 
