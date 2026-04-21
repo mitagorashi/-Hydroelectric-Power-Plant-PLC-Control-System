@@ -1,6 +1,6 @@
 # 💧 Hydroelectric Power Plant — PLC Control System
 
-> **TIA Portal V18 | Structured Text + SFC | WinCC HMI | Analog & Digital I/O | Alarm Management**
+> **TIA Portal V15 | LAD · FBD · SCL · STL · S7-GRAPH | WinCC HMI | Analog & Digital I/O | Alarm Management**
 
 A fully programmed PLC control system for a simulated hydroelectric power plant, developed in Siemens TIA Portal. The project covers a complete sequence of operation (Warmup → Stabilize → Generation → Cooldown → Idle), analog I/O scaling, HOA control modes, ISA-style alarm management, and a multi-screen WinCC HMI.
 
@@ -20,7 +20,10 @@ A fully programmed PLC control system for a simulated hydroelectric power plant,
 
 ## 🎬 Demo
 
-![Full Sequence Demo](media/full_sequence_demo.gif)
+> *(Optional — add a GIF or YouTube link showing the full sequence)*
+
+<!-- ![Full Sequence Demo](media/full_sequence_demo.gif) -->
+<!-- [![Watch on YouTube](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://youtu.be/YOUR_VIDEO_ID) -->
 
 ---
 
@@ -38,7 +41,21 @@ River → [Baffle / Control Valve] → Generator Rotor → AC Current → Power 
 
 ---
 
-## ⚙️ Features
+## 🧠 Programming Languages Used
+
+This project deliberately uses all major IEC 61131-3 languages available in TIA Portal, each chosen for where it fits best:
+
+| Language | Used For |
+|----------|----------|
+| **LAD** (Ladder Diagram) | Digital interlock logic, coil/contact-style safety conditions, E-Stop rungs |
+| **FBD** (Function Block Diagram) | Analog scaling blocks, PID controller wiring, VFD enable/speed chains |
+| **SCL** (Structured Control Language) | Alarm logic, setpoint comparisons, OEE-style calculations, complex conditionals |
+| **STL** (Statement List) | Low-level register operations, accumulated timer logic |
+| **S7-GRAPH** (SFC) | Main sequence of operation — Warmup → Stabilize → Generation → Cooldown → Idle |
+
+The **System Status HMI screen includes a language toggle button** that switches the active display language between LAD, FBD, SCL, and STL views — useful during commissioning and maintenance when different engineers prefer different representations of the same logic.
+
+---
 
 ### Sequence of Operation (S7-GRAPH Block)
 
@@ -99,7 +116,7 @@ All alarm setpoints and delay times are configurable as tags (tunable from HMI).
 
 | Alarm | Setpoint | Delay | Process Action |
 |-------|----------|-------|----------------|
-| Overcurrent | 750 kW | 5 sec | Disengage interlock → normal shutdown |
+| Overcurrent | 550 kW | 5 sec | Disengage interlock → normal shutdown |
 | High Oil Temp | 400° | 5 sec | Disengage interlock → normal shutdown |
 | Rotor Overspeed | 180 RPM | 5 sec | Disengage interlock → normal shutdown |
 | Oil Low Flow | < 5 GPM (VFD on, brake off) | 10 sec | Disengage interlock, deenergize VFD, open baffle, engage brake |
@@ -159,7 +176,7 @@ Every device has Hand / Off / Auto control:
 hydroelectric-plc/
 │
 ├── TIA_Portal/
-│   └── HydroPlant.zap15          # TIA Portal V18 project archive (.zap15 export)
+│   └── HydroPlant.ap15          # TIA Portal V15 project archive (.ap15 export)
 │
 ├── media/                       # All screenshots and GIFs
 │   ├── idle_mode.png
@@ -185,21 +202,23 @@ hydroelectric-plc/
 
 ## 🔧 Tools & Environment
 
-| Tool | Version |
-|------|---------|
-| Siemens TIA Portal | V18 |
+| Tool | Detail |
+|------|--------|
+| Siemens TIA Portal | V15 |
 | PLC | S7-1500 (simulated via PLCSIM Advanced) |
-| HMI Runtime | WinCC Unified / Comfort |
-| Languages Used | Structured Text (SCL), SFC (GRAPH), Ladder |
+| HMI Runtime | WinCC Comfort |
+| Languages Used | LAD (Ladder), FBD (Function Block Diagram), SCL (Structured Text), STL (Statement List), S7-GRAPH (SFC) |
+
+> All five IEC 61131-3 language views are used in this project. The System Status HMI screen includes a **language toggle button** allowing the operator to switch the active programming language view during runtime — useful for maintenance and commissioning across different engineer preferences.
 
 ---
 
 ## 🚀 How to Open
 
-1. Install **TIA Portal V18** (with WinCC and S7-PLCSIM Advanced)
+1. Install **TIA Portal V15** (with WinCC Comfort and S7-PLCSIM)
 2. Clone or download this repository
-3. Open TIA Portal → *Project* → *Retrieve* → select `TIA_Portal/HydroPlant.ap18`
-4. Start PLCSIM Advanced and create a virtual S7-1500 instance
+3. Open TIA Portal → *Project* → *Retrieve* → select `TIA_Portal/HydroPlant.ap15`
+4. Start PLCSIM and create a virtual S7-1500 instance
 5. Download the project to the virtual PLC
 6. Launch the WinCC simulation to interact with the HMI
 
