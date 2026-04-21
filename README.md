@@ -1,5 +1,7 @@
 # 💧 Hydroelectric Power Plant — PLC Control System
-
+[![Siemens TIA Portal V15.1](https://img.shields.io/badge/Siemens-TIA_Portal_V15.1-0099CC?style=flat-square&logo=siemens)](https://new.siemens.com/)
+[![WinCC Professional](https://img.shields.io/badge/SCADA-WinCC_Professional-005B9F?style=flat-square)](https://new.siemens.com/)
+[![SCL & S7-GRAPH](https://img.shields.io/badge/Logic-SCL_%7C_S7--GRAPH-green?style=flat-square)](#)
 > **TIA Portal V15 | LAD · FBD · SCL · STL · S7-GRAPH | WinCC HMI | Analog & Digital I/O | Alarm Management**
 
 A fully programmed PLC control system for a simulated hydroelectric power plant, developed in Siemens TIA Portal. The project covers a complete sequence of operation (Warmup → Stabilize → Generation → Cooldown → Idle), analog I/O scaling, HOA control modes, ISA-style alarm management, and a multi-screen WinCC HMI.
