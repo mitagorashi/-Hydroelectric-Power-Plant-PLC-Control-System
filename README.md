@@ -99,7 +99,7 @@ All alarm setpoints and delay times are configurable as tags (tunable from HMI).
 
 | Alarm | Setpoint | Delay | Process Action |
 |-------|----------|-------|----------------|
-| Overcurrent | 550 kW | 5 sec | Disengage interlock → normal shutdown |
+| Overcurrent | 750 kW | 5 sec | Disengage interlock → normal shutdown |
 | High Oil Temp | 400° | 5 sec | Disengage interlock → normal shutdown |
 | Rotor Overspeed | 180 RPM | 5 sec | Disengage interlock → normal shutdown |
 | Oil Low Flow | < 5 GPM (VFD on, brake off) | 10 sec | Disengage interlock, deenergize VFD, open baffle, engage brake |
