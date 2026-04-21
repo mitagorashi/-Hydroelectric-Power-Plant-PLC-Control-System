@@ -45,13 +45,13 @@ River → [Baffle / Control Valve] → Generator Rotor → AC Current → Power 
 
 This project deliberately uses all major IEC 61131-3 languages available in TIA Portal, each chosen for where it fits best:
 
-| Language | Used For |
+| Language | Implementation Detail |
 |----------|----------|
-| **LAD** (Ladder Diagram) | Digital interlock logic, coil/contact-style safety conditions, E-Stop rungs |
-| **FBD** (Function Block Diagram) | Analog scaling blocks, PID controller wiring, VFD enable/speed chains |
-| **SCL** (Structured Control Language) | Alarm logic, setpoint comparisons, OEE-style calculations, complex conditionals |
-| **STL** (Statement List) | Low-level register operations, accumulated timer logic |
-| **S7-GRAPH** (SFC) | Main sequence of operation — Warmup → Stabilize → Generation → Cooldown → Idle |
+| **LAD** (Ladder Diagram) | The complete logic built using relay-type contacts, coils, and visual networking. |
+| **FBD** (Function Block Diagram) | The exact same logic translated into Boolean logic gates and signal flow paths. |
+| **SCL** (Structured Control Language) | The entire program written in high-level, Pascal-like text (IF/THEN/ELSE, loops). |
+| **STL** (Statement List) | The full program written in low-level, accumulator-based machine instructions. |
+| **S7-GRAPH** (SFC) | The master sequence that governs the active plant state and orchestrates the transitions. |
 
 The **System Status HMI screen includes a language toggle button** that switches the active display language between LAD, FBD, SCL, and STL views — useful during commissioning and maintenance when different engineers prefer different representations of the same logic.
 
